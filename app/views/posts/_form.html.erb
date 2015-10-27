@@ -9,5 +9,10 @@
       <%= text_area_tag :content, post_content %>
     </div>
 
+    <div class="post-field">
+      <%= label_tag "Tags: " %>
+      <%= text_field_tag :tags, post_tags %>
+    </div>
+
     <%= submit_tag button_text %>
 <% end %>
