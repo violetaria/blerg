@@ -1,4 +1,15 @@
 class PostsController < ApplicationController
+  def new
+    render :new
+  end
+
+  def create
+    post = Post.create(title: params[:title],
+                       content: params[:content],
+                       written_at: DateTime.now)
+    redirect_to post_path(post)
+  end
+
   def index
     @posts = Post.page(params[:page]).per(10)
     render :index
