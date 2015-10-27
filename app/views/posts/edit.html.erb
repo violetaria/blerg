@@ -1,14 +1,7 @@
 <h1>Edit Post</h1>
-<%= form_tag(post_path, method: "patch") do %>
-    <div class="post-field">
-      <%= label_tag "Title: " %>
-      <%= text_field_tag :title, @post.title %>
-    </div>
 
-    <div class="post-field">
-      <%= label_tag "Body: " %>
-      <%= text_area_tag :content, @post.content %>
-    </div>
-
-    <%= submit_tag "Update" %>
-<% end %>
+<%= render partial: "form", locals: {path: post_path,
+                                     verb: "patch",
+                                     post_title: @post.title,
+                                     post_content: @post.content,
+                                     button_text: "Update!"} %>

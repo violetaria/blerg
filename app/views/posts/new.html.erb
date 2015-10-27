@@ -1,17 +1,9 @@
 <h1>New Post</h1>
 
-<%= form_tag(posts_path) do %>
-    <div class="post-field">
-      <%= label_tag "Title: " %>
-      <%= text_field_tag :title %>
-    </div>
-
-    <div class="post-field">
-      <%= label_tag "Body: " %>
-      <%= text_area_tag :content %>
-    </div>
-
-    <%= submit_tag "Publish!" %>
-<% end %>
+<%= render partial: "form", locals: {path: posts_path,
+                                     verb: "post",
+                                     post_title: nil,
+                                     post_content: nil,
+                                     button_text: "Publish!"} %>
 
 <%= link_to "Neverdamnmind", :back %>

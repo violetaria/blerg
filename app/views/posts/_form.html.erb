@@ -1,0 +1,13 @@
+<%= form_tag(path, method: verb) do %>
+    <div class="post-field">
+      <%= label_tag "Title: " %>
+      <%= text_field_tag :title, post_title %>
+    </div>
+
+    <div class="post-field">
+      <%= label_tag "Body: " %>
+      <%= text_area_tag :content, post_content %>
+    </div>
+
+    <%= submit_tag button_text %>
+<% end %>
