@@ -3,6 +3,10 @@ class PostsController < ApplicationController
     @posts = Post.page(params[:page]).per(10)
     render :index
   end
-end
 
+  def show
+    @post = Post.find(params[:id])
+    render :show
+  end
+end
 

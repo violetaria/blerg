@@ -1,12 +1,14 @@
 <h2>Blerg Posts</h2>
 
-<h3><%= test %> from rails!</h3>
 <ul class="posts">
     <% @posts.each do |post| %>
-        <li class="post">Title: <%= post.title %>, Written on: <%= post.written_at %></li>
+        <li class="post">
+            <%= link_to post.title, post_path(post) %>
+        </li>
     <% end %>
 
     <div class="posts-nav">
         <%= paginate @posts %>
+        <%= link_to "Add a new Post!", posts_new_path %>
     </div>
 </ul>
