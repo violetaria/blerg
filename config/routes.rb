@@ -12,13 +12,15 @@ Rails.application.routes.draw do
 
   get "posts", to: "posts#index"
   get "posts/new", to: "posts#new"
-  get "posts/edit/:id", to: "posts#edit", as: "edit_post"
+  get "posts/:id/edit", to: "posts#edit", as: "edit_post"
   # can be done better by layering the edit AFTER the :id
   # posts/:id/edit
 
   post "posts", to: "posts#create"
   get "posts/:id", to: "posts#show", as: "post"
   patch "posts/:id", to: "posts#update"
+  delete "posts/:id", to: "posts#destroy"
+
   get "tag/:name", to: "tags#show", as: "tags"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
