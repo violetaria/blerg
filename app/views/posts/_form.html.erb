@@ -1,4 +1,3 @@
-<%= form_tag(path, method: verb) do %>
     <div class="post-field">
       <%= label_tag "Title: " %>
       <%= text_field_tag :title, @post.title %>
@@ -14,5 +13,3 @@
       <%= text_field_tag :tags, @post.tag_names %>
     </div>
 
-    <%= submit_tag button_text %>
-<% end %>

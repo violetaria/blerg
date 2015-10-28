@@ -1,5 +1,7 @@
 <h1>Edit Post</h1>
 
-<%= render partial: "form", locals: {path: post_path(@post),
-                                     verb: "patch",
-                                     button_text: "Update!"} %>
+<%= form_tag(post_path(@post), method: :patch) do %>
+    <%= render partial: "form" %>
+    <%= submit_tag "Update!" %>
+<% end %>
+

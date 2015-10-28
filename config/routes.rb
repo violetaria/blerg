@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get "posts", to: "posts#index"
   get "posts/new", to: "posts#new"
   get "posts/edit/:id", to: "posts#edit", as: "edit_post"
+  # can be done better by layering the edit AFTER the :id
+  # posts/:id/edit
+
   post "posts", to: "posts#create"
   get "posts/:id", to: "posts#show", as: "post"
   patch "posts/:id", to: "posts#update"
