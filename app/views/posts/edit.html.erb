@@ -1,8 +1,5 @@
 <h1>Edit Post</h1>
 
-<%= render partial: "form", locals: {path: post_path,
+<%= render partial: "form", locals: {path: post_path(@post),
                                      verb: "patch",
-                                     post_title: @post.title,
-                                     post_content: @post.content,
-                                     post_tags: @post.tag_names,
                                      button_text: "Update!"} %>
